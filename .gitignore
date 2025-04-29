@@ -1,0 +1,32 @@
+# Bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Flask-related
+instance/
+*.db
+*.sqlite3
+
+# Editor configs
+.vscode/
+*.swp
+*.swo
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# dotenv files
+.env
+*.env
