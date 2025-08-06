@@ -20,6 +20,8 @@ class Manager:
             if i.getID() == id:
                 self.__tasks.remove(i)
                 self.__used_ids.remove(id)
+                return True
+        return False
 
     def GetTasks(self):
         return self.__tasks

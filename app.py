@@ -27,10 +27,16 @@ def getTasks():
         response.append(newItem)
     return flask.jsonify(response) 
 
-@app.route("/task", methods=['DELETE'])
+@app.route("/tasks", methods=['DELETE'])
 def delTasks():
     values = flask.request.get_json()
-    manager.deleteTask(values.get('id'))
+    id_value = values.get('id')
+
+    success = manager.deleteTask(id_value)
+    if success:
+        return flask.jsonify({"mensagem": "Task deletada com sucesso"}), 200
+    else:
+        return flask.jsonify({"erro": "Task não encontrada"}), 404
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
